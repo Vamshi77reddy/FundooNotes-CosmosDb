@@ -82,3 +82,8 @@ C:\Users\Teju Reddy\source\repos\FundooNotesCosmos\fundooNotesComos\obj\Debug\ne
 C:\Users\Teju Reddy\source\repos\FundooNotesCosmos\fundooNotesComos\obj\Debug\net6.0\fundooNotesCosmos.genruntimeconfig.cache
 C:\Users\Teju Reddy\source\repos\FundooNotesCosmos\fundooNotesComos\obj\Debug\net6.0\ref\fundooNotesCosmos.dll
 C:\Users\Teju Reddy\source\repos\FundooNotesCosmos\fundooNotesComos\bin\Debug\net6.0\Azure.Core.dll
+C:\Users\Teju Reddy\source\repos\FundooNotesCosmos\fundooNotesComos\bin\Debug\net6.0\Azure.Core.Amqp.dll
+C:\Users\Teju Reddy\source\repos\FundooNotesCosmos\fundooNotesComos\bin\Debug\net6.0\Azure.Messaging.ServiceBus.dll
+C:\Users\Teju Reddy\source\repos\FundooNotesCosmos\fundooNotesComos\bin\Debug\net6.0\Microsoft.Azure.Amqp.dll
+C:\Users\Teju Reddy\source\repos\FundooNotesCosmos\fundooNotesComos\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Teju Reddy\source\repos\FundooNotesCosmos\fundooNotesComos\bin\Debug\net6.0\System.Memory.Data.dll

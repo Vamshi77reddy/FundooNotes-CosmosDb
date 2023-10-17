@@ -139,7 +139,7 @@ namespace fundooNotesComos
             // This middleware serves the Swagger documentation UI
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Fundoo API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "FundooCosmosDb API V1");
             });
         }
     }

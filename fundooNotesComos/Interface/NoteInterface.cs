@@ -14,6 +14,9 @@ namespace fundooNotesCosmos.Interface
         public bool RemoveCollaboratorFromNote(string noteId, string collaboratorEmail);
         public bool AddLabelToNote(string noteId, string label);
         public bool RemoveLabelFromNote(string noteId, string label);
+        public NoteEntity GetNoteByLabelName(string userId, string NoteName);
+
+
 
     }
 }

@@ -55,6 +55,12 @@ namespace fundooNotesCosmos.Services
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public static string EncodePassword(string password)
         {
             try
@@ -70,6 +76,11 @@ namespace fundooNotesCosmos.Services
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public static string Decrypt(string password)
         {
             if (string.IsNullOrEmpty(password))
@@ -83,6 +94,12 @@ namespace fundooNotesCosmos.Services
                 return decryptedPass;
             }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="loginModel"></param>
+        /// <returns></returns>
 
         public string Login(LoginModel loginModel)
         {
@@ -107,6 +124,12 @@ namespace fundooNotesCosmos.Services
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="EmailId"></param>
+        /// <param name="UserId"></param>
+        /// <returns></returns>
         public string GenerateJwtToken(string EmailId, string UserId)
         {
             try
@@ -132,6 +155,11 @@ namespace fundooNotesCosmos.Services
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="forgetPasswordModel"></param>
+        /// <returns></returns>
         public ForgetPasswordModel UserForgetPassword(ForgetPasswordModel forgetPasswordModel)
         {
             try
@@ -142,6 +170,7 @@ namespace fundooNotesCosmos.Services
                 {
                     forgetPasswordModel.Token = GenerateJwtToken(result.EmailId, result.id);
                     forgetPasswordModel.UserId = result.id;
+                    MessageService.SendmessgeToQueue(forgetPasswordModel.EmailId, forgetPasswordModel.Token);
                     return forgetPasswordModel;
                 }
 
@@ -153,7 +182,13 @@ namespace fundooNotesCosmos.Services
             }
         }
 
-        public ResetPasswordModel ResetPassword(string email, ResetPasswordModel resetPasswordModel)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="resetPasswordModel"></param>
+        /// <returns></returns>
+        public  ResetPasswordModel ResetPassword(string email, ResetPasswordModel resetPasswordModel)
         {
             try
             {
@@ -167,6 +202,9 @@ namespace fundooNotesCosmos.Services
                 throw ex;
             }
         }
+
+     
+       
 
     }
 }

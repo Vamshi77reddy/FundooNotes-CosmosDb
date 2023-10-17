@@ -1,4 +1,5 @@
-﻿using fundooNotesCosmos.Entities;
+﻿using fundooNotesCosmos.Context;
+using fundooNotesCosmos.Entities;
 using fundooNotesCosmos.Interface;
 using fundooNotesCosmos.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -6,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Threading.Tasks;
 
 namespace fundooNotesCosmos.Controllers
 {
@@ -16,7 +18,7 @@ namespace fundooNotesCosmos.Controllers
         private readonly UserInterface userInterface;
         public UserController(UserInterface userInterface)
         {
-           this.userInterface = userInterface;
+            this.userInterface = userInterface;
         }
         [HttpPost("Register")]
         public IActionResult Register(UserModel registration)
@@ -92,5 +94,19 @@ namespace fundooNotesCosmos.Controllers
             }
         }
 
+        [HttpPost("ForgetPassword")]
+        public async Task<IActionResult> UserForgetPassWord(ForgetPasswordModel forgetPasswordModel)
+        {
+            var result = userInterface.UserForgetPassword(forgetPasswordModel);
+            if (result != null)
+            {
+                return Ok(new ResponseModel<ForgetPasswordModel> { Status = true, Message = "ForgetPassword  Successful", Data = result });
+            }
+            else
+            {
+                return BadRequest(new ResponseModel<ForgetPasswordModel> { Status = false, Message = "ForgetPassword Failed", Data = result });
+
+            }
+        }
     }
 }

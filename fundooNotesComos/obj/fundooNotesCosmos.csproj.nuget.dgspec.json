@@ -41,6 +41,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Azure.Messaging.ServiceBus": {
+              "target": "Package",
+              "version": "[7.16.2, )"
+            },
             "MassTransit": {
               "target": "Package",
               "version": "[6.2.5, )"
