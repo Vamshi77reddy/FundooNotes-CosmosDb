@@ -94,6 +94,12 @@ namespace fundooNotesCosmos.Controllers
             }
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="forgetPasswordModel"></param>
+        /// <returns></returns>
         [HttpPost("ForgetPassword")]
         public async Task<IActionResult> UserForgetPassWord(ForgetPasswordModel forgetPasswordModel)
         {
@@ -108,5 +114,7 @@ namespace fundooNotesCosmos.Controllers
 
             }
         }
+
+
     }
 }
